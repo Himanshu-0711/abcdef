@@ -1,12 +1,22 @@
 version: 0.0
 os: linux
 
+files:
+  - source: /
+    destination: /var/www/html
+
+permissions:
+  - object: /var/www/html
+    pattern: "**"
+    owner: nginx
+    group: nginx
+
 hooks:
-  ApplicationStop:
-    - location: scripts/after-install.sh
+  BeforeInstall:
+    - location: scripts/before-install.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/before-install.sh
+    - location: scripts/after-install.sh
       timeout: 300
       runas: root
