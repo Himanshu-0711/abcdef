@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Example: Stop NGINX service before deployment
-echo "hii"
+service nginx stop
 
 # Example: Backup existing files in /var/www/html (optional)
-# sudo mv /var/www/html /var/www/html_backup_$(date +"%Y%m%d%H%M%S")
+mv /var/www/html /var/www/html_backup_$(date +"%Y%m%d%H%M%S")
 
 # Create directory if it doesn't exist
-echo "will be starting soon"
+mkdir -p /var/www/html
 
-# Example: Additional tasks before installation
+# Additional tasks before installation
 # ...
 
 exit 0
