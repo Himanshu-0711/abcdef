@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:scratch
 RUN rm -rf usr/share/nginx/html/*
 WORKDIR usr/share/nginx/html/
 COPY . . 
