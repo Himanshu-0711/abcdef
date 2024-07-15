@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Example: Change ownership and permissions of files in /var/www/html
-docker pull 909325007152.dkr.ecr.us-east-1.amazonaws.com/dev:latest
+chown -R nginx:nginx /var/www/html
+chmod -R 755 /var/www/html
 
+# Start NGINX service after deployment
+service nginx start
 
-# Example: Start NGINX service after deployment
-docker run -d -p 80:80 dev:latest
-
-# Example: Additional tasks after installation
+# Additional tasks after installation
 # ...
 
 exit 0
